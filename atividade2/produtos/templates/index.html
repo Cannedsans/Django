@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <h1>Loja</h1>
+    <a href = "{% url 'adicionar_produto' %}">Novo produto</a>
+    <main>
+      {% for produto in produtos %}
+      <blockquote>
+        <legend>{{produto.nome}}</legend>
+        
+        <div>
+          {{produto.preco}}
+          <br>
+          <a href="{% url 'apagar_produto' produto.id %}" onclick="return confirm('Tem certeza que deseja apagar este produto?');">Apagar</a>
+        </div>
+      </blockquote>
+      {% endfor %}
+    </main>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Autores</title>
+</head>
+<body>
+    <h1>Lista de Autores</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Nacionalidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for autor in autores %}
+            <tr>
+                <td>{{ autor.nome }}</td>
+                <td>{{ autor.sobrenome }}</td>
+                <td>{{ autor.nacionalidade|default:"Não informada" }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'index' %}">Voltar</a>
+    <br>
+<a href="{% url 'criar_autor' %}">Criar Autor</a>
+</body>
+</html>

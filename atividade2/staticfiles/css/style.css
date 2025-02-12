@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* 4 colunas */
+    grid-template-rows: repeat(8, auto);  /* Altura automática */
+    gap: 1px;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+blockquote {
+    display: grid; /* Permite dividir a área em partes */
+    grid-template-rows: auto 1fr; /* Linha para legenda e conteúdo */
+    width: 200px; /* Define largura fixa */
+    height: 200px; /* Igual à largura para ser quadrado */
+    background-color: #333;
+    color: whitesmoke;
+    position: relative;
+    overflow: hidden; /* Garante que nada fique fora do bloco */
+    border: 1px solid #999;
+}
+
+legend {
+    grid-row: 1; /* Posiciona na primeira linha */
+    background-color: whitesmoke;
+    color: black;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 2px 5px;
+    border: 1px 1px 0px 1px solid #333;
+}
+
+blockquote > div {
+    grid-row: 2; /* Conteúdo ocupa a segunda linha */
+    padding: 10px;
+}
+a{
+    background-color: azure;
+    border-radius: 15px;
+}

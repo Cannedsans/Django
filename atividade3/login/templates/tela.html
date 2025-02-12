@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Página Inicial{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-primary bg-light mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Minha Aplicação</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'cadastro' %}">Cadastro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-danger" href="{% url 'sair' %}">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Boas-vindas -->
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card text-center">
+                <div class="card-header bg-primary text-white">
+                    <h4>Bem-vindo!</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Você está logado no sistema.</p>
+                    <a href="{% url 'sair' %}" class="btn btn-danger">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
